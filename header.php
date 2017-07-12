@@ -1,3 +1,4 @@
+<? include('functions/core.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,6 +22,7 @@
 						<ul>
 							<li><a href="">Home</a></li>
 							<li><a href="">Cadastrar Nova Sala</a></li>
+							<li><a href="">Listar Salas</a></li>
 							<li><a href="">Reservar Sala</a></li>
 							<li><a href="">Sair</a></li>
 						</ul>		
