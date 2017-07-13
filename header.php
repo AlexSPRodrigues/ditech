@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="assets/css/reset.css">
 	<link rel="stylesheet" href="assets/css/bootstrap.css">
 	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
 </head>
 <body>
 	<div class="container-fluid">
@@ -20,9 +21,9 @@
 				<aside>
 					<h2>Menu</h2>
 						<ul>
-							<li><a href="">Home</a></li>
-							<li><a href="">Cadastrar Nova Sala</a></li>
-							<li><a href="">Listar Salas</a></li>
+							<li><a href="page.page.dashboard.php">Home</a></li>
+							<li><a href="page.cadastrar-sala.php">Cadastrar Nova Sala</a></li>
+							<li><a href="page.listar-salas.php">Listar Salas</a></li>
 							<li><a href="">Reservar Sala</a></li>
 							<li><a href="">Sair</a></li>
 						</ul>		

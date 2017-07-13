@@ -26,6 +26,20 @@ class Sala{
 		return $retorno;
 	}
 
+	function get($id){
+
+		$retorno = array();
+		$query = $this->db->query("SELECT salas.id, salas.nome FROM salas WHERE id = {$id}");
+
+		if($query->num_rows > 0){
+			$retorno = $query->fetch_assoc();
+		}else{
+			$retorno = NULL;
+		}
+		
+		return $retorno;
+	}
+
 }
 
 ?>

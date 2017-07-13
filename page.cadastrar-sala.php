@@ -14,32 +14,11 @@
 	</div>
 	
 	<div class="alertas">
-		
-		<?php if(isset($_GET['cadastro']) && $_GET['cadastro'] == "true"){ ?>
-			<div class="alert alert-success">
-  				<strong>Successo!</strong> Sala cadastrada com sucesso.
-			</div>
-		<?php } ?>
-
-		<?php if(isset($_GET['cadastro']) && $_GET['cadastro'] == "false"){ ?>
-			<div class="alert alert-danger">
-  				<strong>Erro!</strong> Sala não cadastrada, verifique o preenchimento dos campos.
-			</div>
-		<?php } ?>
-
+		<?php
+			include('page.mensagens-retorno.php');
+		?>
 	</div>
 
 <?php
 	include('footer.php')
 ?>
-
-<script>
-	$(document).ready(function(){
-
-		setInterval(function(){ 
-			$('.alert-danger').fadeOut('slow'); 
-			$('.alert-success').fadeOut('slow'); 
-		}, 2000);
-	
-	});
-</script>
