@@ -21,11 +21,23 @@
 				<aside>
 					<h2>Menu</h2>
 						<ul>
-							<li><a href="page.page.dashboard.php">Home</a></li>
-							<li><a href="page.cadastrar-sala.php">Cadastrar Nova Sala</a></li>
-							<li><a href="page.listar-salas.php">Listar Salas</a></li>
+							<li><a href="page.dashboard.php">Home</a></li>
+							
+							<li>Usuários</a></li>
+							<ul>
+								<li><a href="page.usuarios-listar.php">Listar Usuários</a></li>
+								<li><a href="page.cadastrar-usuario.php">Cadastrar Novo Usuário</a></li>
+							</ul>
+
+							<li>Salas</a></li>
+							<ul>
+								<li><a href="page.cadastrar-sala.php">Cadastrar Nova Sala</a></li>
+								<li><a href="page.listar-salas.php">Listar Salas</a></li>
+							</ul>
+							
 							<li><a href="">Reservar Sala</a></li>
-							<li><a href="">Sair</a></li>
+							<li><a href="">Sair</a></li>	
+							
 						</ul>		
 				</aside>
 			</div>			
