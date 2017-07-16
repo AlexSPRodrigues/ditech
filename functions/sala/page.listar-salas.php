@@ -32,13 +32,13 @@
 							<td><?= $sala['id'] ?></td>
 							<td><?= $sala['nome'] ?></td>
 							<td>
-								<a href="page.editar-sala.php?id=<?=$sala['id']?>" class="btn btn-primary btn-xs">
+								<a href="<?=$config['admin_url']?>sala/atualizar?id=<?=$sala['id']?>" class="btn btn-primary btn-xs">
 									<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar
 								</a>
-								<form action="form.deletar-sala.php" method="get" style="display: inline;">
-									<input type="hidden" name="id" value="<?=$sala['id']?>">
-									<input type="submit" class="btn btn-danger btn-xs" value="Excluir"></input>	
-								</form>
+
+								<a href="<?=$config['admin_url']?>sala/excluir?id=<?=$sala['id']?>" class="btn btn-danger btn-xs">
+									<i class="fa fa-trash" aria-hidden="true"></i> Excluir
+								</a>
 								
 							</td>
 						</tr>

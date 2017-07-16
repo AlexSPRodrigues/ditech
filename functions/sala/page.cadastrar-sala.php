@@ -3,7 +3,7 @@
 ?>
 
 	<div class="formulario">
-		<form action="form.cadastrar-sala.php" method="post">
+		<form action="<?=$config['admin_url']?>sala/salvar" method="post">
 			<div class="form-group">
   				<label for="usr">Nome da Sala: </label>
 	  			<input type="text" class="form-control" id="nome" name="nome" placeholder="Nome da Sala" required>

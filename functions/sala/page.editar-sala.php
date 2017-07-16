@@ -1,19 +1,14 @@
 <?php
 	include('../../header.php');
 
-	if(isset($_GET['id'])){
-		$id = $_GET['id'];
-		$objeto = new Sala($db);
-		$sala = $objeto->get($id);
-	}
-	// echo "<pre>";
-	// print_r($sala);
-	// echo "</pre>";
-	// die;
+	$id = $_GET['id'];
+	$objeto = new Sala($db);
+	$sala = $objeto->get($id);
+
 ?>
 
 	<div class="formulario">
-		<form action="form.editar-sala.php" method="post">
+		<form action="<?=$config['admin_url']?>sala/editar" method="post">
 
 			<input type="hidden" name="id" value="<?=$id?>">
 

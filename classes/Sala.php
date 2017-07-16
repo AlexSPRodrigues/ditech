@@ -26,6 +26,53 @@ class Sala{
 		return $retorno;
 	}
 
+
+	function store($request){
+
+		$nome = $this->db->real_escape_string($request['nome']);
+		$sql = "INSERT INTO salas(nome, created_at, updated_at) VALUES('{$nome}', NOW(), NOW())";
+
+		if($this->db->query($sql)){
+			return "true";
+		}else{
+			return "false";
+		}
+	}
+
+
+	function update($id, $request){
+
+		$id = $this->db->real_escape_string($id);
+		$nome = $this->db->real_escape_string($request['nome']);
+
+		$sql = "UPDATE salas SET salas.nome = '{$nome}', salas.updated_at = NOW() WHERE salas.id = {$id}";
+
+		if($this->db->query($sql)){
+			return "true";
+		}else{
+			return "false";
+		}
+
+
+	}
+
+
+	function delete($id){
+
+		$sql = "DELETE FROM salas WHERE salas.id = {$id}";
+
+		if($this->db->query($sql)){
+			return "true";
+		}else{
+			return "false";
+		}
+
+	}
+
+
+
+
+
 	function get($id){
 
 		$retorno = array();

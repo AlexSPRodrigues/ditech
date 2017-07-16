@@ -1,14 +1,22 @@
 <?php
 
-	include('functions/core.php');
+	include('../../core.php');
 
 	$nome = $db->real_escape_string($_POST['nome']);
 
 	if($nome == ""){
-			header("Location: page.cadastrar-sala.php?cadastrar=false");
+			header("Location: {$config['admin_url']}salas?cadastrar=false");
 	}else{
-		$db->query("INSERT INTO salas(nome, created_at, updated_at) VALUES('{$nome}', NOW(), NOW())") or die(mysqli_error($db));
-		header("Location: page.cadastrar-sala.php?cadastrar=true");
+		
+		$sala = new Sala($db);
+		$insere_sala = $sala->store($_POST);
+
+		if($insere_sala == "true"){
+			header("Location: {$config['admin_url']}salas?cadastrar=true");
+		}else{
+			header("Location: {$config['admin_url']}salas?cadastrar=false");
+		}
+
 
 	}
 
