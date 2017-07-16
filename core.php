@@ -5,5 +5,7 @@
 	require "classes/Database.php";
 	require "classes/Sala.php";
 	require "classes/Usuario.php";
+	require "classes/Horario.php";
+	require "classes/ReservaSala.php";
 
 ?>

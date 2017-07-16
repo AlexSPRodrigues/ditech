@@ -38,8 +38,12 @@
 								<li><a href="<?=$config['admin_url']?>salas">Listar Salas</a></li>
 								<li><a href="<?=$config['admin_url']?>sala/novo">Cadastrar Nova Sala</a></li>
 							</ul>
-							
-							<li><a href="">Reservar Sala</a></li>
+							<li>Reserva de Salas</a></li>
+							<ul>
+								<li><a href="<?=$config['admin_url']?>reservas">Listar Reservas</a></li>
+								<li><a href="<?=$config['admin_url']?>reservar/novo">Reservar Sala</a></li>
+								
+							</ul>
 							<li><a href="">Sair</a></li>	
 							
 						</ul>		
