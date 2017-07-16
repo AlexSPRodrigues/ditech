@@ -1,5 +1,10 @@
 $(document).ready(function(){
 
+// DATATABLE
+	$('#tabela').DataTable();
+// DATATABLE
+
+
 // SCRIPT PARA DESAPARECER COM A MENSAGEM 
 	setInterval(function(){ 
 		$('.alert-danger').fadeOut('slow'); 
