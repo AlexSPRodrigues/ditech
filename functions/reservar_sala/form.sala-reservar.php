@@ -1,5 +1,7 @@
 <?php
 
+	@session_start();
+
 	include('../../core.php');
 
 	if($_POST){

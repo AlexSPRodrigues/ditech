@@ -1,5 +1,7 @@
 <?php
 
+	@session_start();
+
 	class Horario{
 
 		function __construct($db){

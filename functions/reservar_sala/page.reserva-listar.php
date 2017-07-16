@@ -1,8 +1,17 @@
 <?php
+
 	include('../../header.php');
+
+
+	if($_SESSION['papel'] == "administrador"){
+		$reserva = new ReservaSala($db);
+		$lista_reservas = $reserva->getAll();	
+	}else{
+		$id = $_SESSION['id'];
+		$reserva = new ReservaSala($db);
+		$lista_reservas = $reserva->getReservaCliente($id);
+	}	
 	
-	$reserva = new ReservaSala($db);
-	$lista_reservas = $reserva->getAll();
 
 	// echo "<pre>";
 	// print_r($lista_salas);
@@ -16,12 +25,12 @@
 		
 		<table class="table">
 			<thead>
-				<th>ID</th>
-				<th>Usuário</th>
-				<th>Sala</th>
-				<th>Data</th>
-				<th>Horário</th>
-				<th>Ações</th>
+				<th class="text-center"><strong>ID</strong></th>
+				<th class="text-center"><strong>Usuário</strong></th>
+				<th class="text-center"><strong>Sala</strong></th>
+				<th class="text-center"><strong>Data</strong></th>
+				<th class="text-center"><strong>Horário</strong></th>
+				<th class="text-center"><strong>Ações</strong></th>
 			</thead>
 			<tbody>
 				<? if(count($lista_reservas) < 1){ ?>
@@ -33,12 +42,12 @@
 				<? }else{ ?>
 					<? foreach($lista_reservas as $reserva){ ?>
 						<tr>
-							<td><?= $reserva['id'] ?></td>
-							<td><?= $reserva['nome_usuario'] ?></td>
-							<td><?= $reserva['nome_sala'] ?></td>
-							<td><?= $reserva['data_reserva'] ?></td>
-							<td><?= $reserva['horario'] ?></td>
-							<td>
+							<td class="text-center"><?= $reserva['id'] ?></td>
+							<td class="text-center"><?= $reserva['nome_usuario'] ?></td>
+							<td class="text-center"><?= $reserva['nome_sala'] ?></td>
+							<td class="text-center"><?= $reserva['data_reserva'] ?></td>
+							<td class="text-center"><?= $reserva['horario'] ?></td>
+							<td class="text-center">
 								<a href="<?=$config['admin_url']?>reservar/excluir?id=<?=$reserva['id']?>" class="btn btn-danger btn-xs">
 									<i class="fa fa-trash" aria-hidden="true"></i> Excluir
 								</a>

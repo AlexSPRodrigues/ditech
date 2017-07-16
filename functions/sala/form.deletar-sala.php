@@ -1,5 +1,7 @@
 <?php
 
+	@session_start();
+
 	include('../../core.php');
 
 	$id = $db->real_escape_string($_GET['id']);

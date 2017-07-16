@@ -1,5 +1,7 @@
 <?php
 
+	@session_start();
+
 	include('../../core.php');
 
 	if($_GET['id'] && $_GET['id'] != ""){

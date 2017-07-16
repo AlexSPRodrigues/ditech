@@ -1,5 +1,7 @@
 <?php
 
+	@session_start();
+
 	class ReservaSala{
 
 		private $db;
@@ -13,6 +15,23 @@
 
 			$retorno = array();
 			$query = $this->db->query("SELECT reserva_salas.id AS id, usuarios.nome AS nome_usuario, salas.nome AS nome_sala, reserva_salas.data_reserva AS data_reserva, horarios.horario AS horario FROM reserva_salas INNER JOIN usuarios ON usuarios.id = reserva_salas.id_usuario INNER JOIN salas ON salas.id = reserva_salas.id_sala INNER JOIN horarios ON horarios.id = reserva_salas.id_horario");
+
+			if($query->num_rows > 0){
+				$i = 0;
+				while($reserva = $query->fetch_assoc()){
+					$retorno[$i] = $reserva;
+					$i++;
+				}
+			}
+
+			return $retorno;
+
+		}
+
+		function getReservaCliente($id){
+
+			$retorno = array();
+			$query = $this->db->query("SELECT reserva_salas.id AS id, usuarios.nome AS nome_usuario, salas.nome AS nome_sala, reserva_salas.data_reserva AS data_reserva, horarios.horario AS horario FROM reserva_salas INNER JOIN usuarios ON usuarios.id = reserva_salas.id_usuario INNER JOIN salas ON salas.id = reserva_salas.id_sala INNER JOIN horarios ON horarios.id = reserva_salas.id_horario WHERE reserva_salas.id_usuario = {$id}");
 
 			if($query->num_rows > 0){
 				$i = 0;

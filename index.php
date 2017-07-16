@@ -30,7 +30,7 @@
 
 			<div class="row">
 				<div class="col-md-12">
-					<form action="<?=$config['admin_url']?>">
+					<form action="<?=$config['admin_url']?>logar" method="POST">
 						<div style="position: relative; left: 45%;">
 							<div class="input-group">
 								<label>E-mail</label>

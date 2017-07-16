@@ -1,12 +1,13 @@
 .banner{
 	text-align: center;
-	background-color: red;
+	border-bottom: 3px solid #000;
+	/*background-color: red;*/
 }
 
 .formulario{
-	padding: 20px 20px;
+	padding: 10px 10px;
 }
 
 .tabela-salas{
-	padding: 20px 20px;
+	padding: 10px 10px;
 }

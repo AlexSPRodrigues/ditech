@@ -15,21 +15,7 @@
 	<div class="formulario">
 		<form action="<?=$config['admin_url']?>reservar/salvar" method="post">
 			
-			<div class="form-group">
-  				<label for="usr">Usuário: </label>
-	  			<select class="form-control" id="usuario" name="usuario" required>
-				    <option value="">Selecione o usuário</option>
-				    <?
-				    	if(count($lista_usuarios) > 0){
-				    		foreach($lista_usuarios as $usuario){
-				    ?>
-				    	<option value="<?=$usuario['id']?>"><?=$usuario['nome']?></option>
-				    <?
-				    	}
-				    }
-				    ?>
-			  	</select>
-			</div>
+			<input type="hidden" name="usuario" value="<?=$_SESSION['id'];?>">
 
 			<div class="form-group">
   				<label for="usr">Sala: </label>
